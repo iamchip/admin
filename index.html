@@ -137,6 +137,7 @@ async function logLogin(){
       discord_name:user.user_metadata?.full_name||user.user_metadata?.name||'Unknown',
       avatar_url:user.user_metadata?.avatar_url||'',
       user_id:user.id,
+      page:'Admin Panel',
     });
   }catch(e){}
 }
@@ -308,7 +309,7 @@ function renderLoginList(){
         <div class="login-time">${timeStr} · ${date.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}</div>
         <div style="font-family:var(--font-cond);font-size:0.65rem;letter-spacing:1.5px;color:#444;text-transform:uppercase;margin-top:1px;">${pageLabel}</div>
       </div>
-      ${isRecent?`<span class="login-new">Online</span>`:''}
+      ${isRecent?`<span class="login-new">Recent</span>`:''}
     </div>`;
   }).join('');
 }
